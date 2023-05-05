@@ -1,14 +1,16 @@
 const loginFrom = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
 
-const link = document.querySelector("a");
+const HIDDEN_CLASSNAME = "hidden";
 
 function onLoginSubmit(event){
-    event.preventDefault(); //기본 브라우저 동작 막아줌 
-    console.log(loginInput.value);
-}
-function handleLinkClick(event){
     event.preventDefault();
-    //alert("clicked!");// 경고창 때문에 페이지 이동 막아줌 -> ok 누르면 이동
+    loginFrom.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
+    //greeting.innerText = "Hello" + username;
+    greeting.innerText = `Hello ${username}`; //`에 있는 문자 grave
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+
 }
 loginFrom.addEventListener("submit",onLoginSubmit);
