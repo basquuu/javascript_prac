@@ -8,8 +8,8 @@ function onLoginSubmit(event){
     event.preventDefault();
     loginFrom.classList.add(HIDDEN_CLASSNAME);
     const username = loginInput.value;
-    //greeting.innerText = "Hello" + username;
-    greeting.innerText = `Hello ${username}`; //`에 있는 문자 grave
+    localStorage.setItem('username',username);
+    greeting.innerText = `Hello ${username}`; 
     greeting.classList.remove(HIDDEN_CLASSNAME);
 
 }
