@@ -1,8 +1,10 @@
+const loginFrom = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
 
-function onLoginBtnClick(){
-    const username = loginInput.value;
-    console.log(username);
+function onLoginSubmit(event){
+    event.preventDefault(); //기본 브라우저 동작 막아줌 
+    console.log(loginInput.value);
 }
-loginButton.addEventListener("click",onLoginBtnClick);
+
+loginFrom.addEventListener("submit",onLoginSubmit);
+onLoginSubmit();
